@@ -18,24 +18,32 @@ The more challenging part was writing the test and running the shell script, run
 
 
 ## Compiling and Using
-To compile use the Javac command followed by the main class, CPUScheduling.java.
+I used Maven for package management, therefore the following instructions should be used for compiling.
 ```bash
-$javac CPUScheduling.java
+$mvn clean
+$mvn package
 ```
 
+To run the tests for this project, run the following command
+```bash
+$mvn test
+```
 
 To run the code run the command use the java command along with the required and optional
 parameters. The following is the general format
 
 ```bash
-java CPUScheduling <maxProcessTime> <maxPriorityLevel> <timeToIncrementPriority>
+java -cp target/heap-project-2-1.0-SNAPSHOT.jar com.example.CPUScheduling <maxProcessTime> <maxPriorityLevel> <timeToIncrementPriority>
 <simulationTime> <processArrivalRate> [<seed>]
 ```
 Example
 ```bash
-java CPUScheduling  2 2 1 20 0.5 1234
+java -cp target/heap-project-2-1.0-SNAPSHOT.jar com.example.CPUScheduling  2 2 1 20 0.5 1234
 ```
-
+To run the project with multiple inputs and test the output run the run-tests.sh script.
+```bash
+$./run-tests.sh
+```
 ## Results 
 
 The program all of the test cases given on the Github repo.
